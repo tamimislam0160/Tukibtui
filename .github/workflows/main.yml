@@ -1,137 +1,36 @@
-[
-    {
-        "key": "dbln",
-        "value": "%7B%2261550305526401%22%3A%22lMa3ItdZ%22%2C%2261575635965520%22%3A%227UYHXxvA%22%2C%2261577766982360%22%3A%22nPEIdTmV%22%7D",
-        "domain": "facebook.com",
-        "path": "/login/device-based/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.984Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "datr",
-        "value": "OGzBaDUcRQg0DSHyBeBikO8U",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "ps_l",
-        "value": "1",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "ps_n",
-        "value": "1",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "sb",
-        "value": "OGzBaHPkPM4GmaeiydOPLkCG",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "vpd",
-        "value": "v1%3B728x360x3",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "c_user",
-        "value": "61577766982360",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "xs",
-        "value": "29%3Ab4h20XQJxVe4yw%3A2%3A1757700446%3A-1%3A-1",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "locale",
-        "value": "en_US",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "pas",
-        "value": "61550305526401%3AWe6UYFMw5R%2C61575635965520%3AKmGiwrp3a5%2C61577766982360%3A7hw79y0O4L",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "m_pixel_ratio",
-        "value": "3",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "wd",
-        "value": "360x820",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "fr",
-        "value": "0PDWlnmdaVEyJGgLe.AWdeIYJ5kgiN5Gjkik7qeYOBL3zyEHa5VQEDtBdJtThz05kBdFg.BowWw4..AAA.0.0.BoxRDL.AWd94ji_F4SAqXog46w0pdpmDMU",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "fbl_st",
-        "value": "100431963%3BT%3A29295755",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    },
-    {
-        "key": "wl_cbv",
-        "value": "v2%3Bclient_version%3A2921%3Btimestamp%3A1757745355",
-        "domain": "facebook.com",
-        "path": "/",
-        "hostOnly": false,
-        "creation": "2025-09-13T06:41:21.985Z",
-        "lastAccessed": "2025-09-13T06:41:21.985Z"
-    }
-]
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    # Step to check out the repository code
+    - uses: actions/checkout@v2
+
+    # Step to set up the specified Node.js version
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    # Step to install dependencies
+    - name: Install dependencies
+      run: npm install
+
+    # Step to run the bot with the correct port
+    - name: Start the bot
+      env:
+        PORT: 8080
+      run: npm start
